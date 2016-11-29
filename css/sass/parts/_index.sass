@@ -1,0 +1,296 @@
+body.menu-open
+	position: fixed
+	overflow: hidden
+	top: 0
+	left: 0
+	width: 100%
+
+#showme
+	padding-top: 40px
+
+.gallery-wrap
+	min-height: 100vh
+	position: relative
+	padding-bottom: 350px
+
+header
+	line-height: 80px
+
+.b-logo
+	background: $themeDark
+	text-align: center
+
+.b-logo a
+	display: block
+	text-decoration: none
+	font-family: $roverd
+	font-size: 34px
+	color: #fff
+	opacity: .8
+
+	&:hover
+		opacity: 1
+
+.year-list
+	list-style-type: none
+	padding: 0
+	margin: 0
+	text-align: center
+
+	li
+		display: inline-block
+		margin: 10px
+
+		&.active span
+			opacity: 1
+
+	span
+		cursor: pointer
+		display: block
+		color: #000
+		opacity: .8
+		transition: all .3s ease
+
+		&:hover,
+		&.active
+			opacity: 1
+
+img
+	max-width: 100%
+
+article
+	text-align: center
+
+article img
+	transition: transform .3s ease
+
+article
+	overflow: hidden
+	position: relative
+
+	&:hover 
+		img
+			transform: scale(1.1, 1.1)
+
+		.description
+			opacity: 1
+			visibility: visible
+			bottom: 0
+			animation: slowShow .3s ease
+
+footer
+	position: absolute
+	bottom: 0
+	width: 100%
+	text-align: center
+
+footer p,
+footer a
+	color: #8d8d8d
+
+span.go-up
+	display: inline-block
+	cursor: pointer
+	margin-top: 40px
+
+p.bottom-text
+	font-family: $blogLightItalic
+	font-size: 30px
+	line-height: 20px
+	letter-spacing: .2em
+	text-transform: uppercase
+	margin: 50px 0
+	cursor: pointer
+
+.nav
+	margin: 0
+	padding: 0
+	clear: both
+	transition: all .3s ease
+	visibility: hidden
+	opacity: 0
+	position: fixed
+	display: flex
+	flex-direction: column
+	justify-content: center
+	width: 100%
+	height: 100vh
+	left: 0
+	top: 0
+	background: rgba(0,0,0,.8)
+	z-index: 10
+
+	&.active
+		visibility: visible
+		opacity: 1
+
+	li
+		display: flex
+		justify-content: center
+
+		&.up
+			animation-fill-mode: forwards
+			animation: fadeInUp 1s ease
+
+		&.down
+			animation-fill-mode: forwards
+			animation: fadeOutDown 1s ease
+
+		a
+			display: flex
+			justify-content: center
+			width: 100%
+			line-height: 50px
+			background: rgba(0, 0, 0, 0)
+			text-transform: uppercase
+			text-decoration: none
+			transition: all .3s ease
+			color: #fff
+			
+			&:hover
+				background: rgba(0,0,0,.5)
+
+
+.menu-button
+	display: block
+	position: fixed
+	right: 0
+	top: 0
+	z-index: 2
+	cursor: pointer
+	font-size: 12px
+	text-transform: uppercase
+	float: right
+	border: none
+	background: #fff
+	padding: 10px
+
+	$w: 20px
+	$h: 1px
+	span
+		display: block
+
+	.sandwich
+		width: $w
+		height: 20px
+		cursor: pointer
+		position: relative
+		top: 0
+		//bottom: 0
+		//left: 0
+		right: 0
+		margin: auto
+		z-index: 200
+
+
+
+	.sw-topper
+		position: relative
+		top: 0
+		width: $w
+		height: $h
+		background: #000
+		border: none
+		border-radius: 4px 4px 4px 4px
+		transition: transform 0.5s, top 0.2s
+
+
+	.sw-bottom
+		position: relative
+		width: $w
+		height: $h
+		top: $h * 6
+		background: #000
+		border: none
+		border-radius: 4px 4px 4px 4px
+		transition: transform 0.5s, top 0.2s
+		transition-delay: 0.2s, 0s
+
+
+	.sw-footer
+		position: relative
+		width: $w
+		height: $h
+		top: $h * 12
+		background: #000
+		border: none
+		border-radius: 4px 4px 4px 4px
+		transition: all 0.5s
+		transition-delay: 0.1s
+
+	&.active
+		color: transparent
+		z-index: 11
+		background: transparent
+		//position: absolute
+		//right: calc(50% - 6px)
+		.sw-topper
+			top: 5px
+			transform: rotate(-45deg)
+			background: #fff
+
+
+		.sw-bottom
+			top: 4px
+			transform: rotate(45deg)
+			background: #fff
+
+		.sw-footer
+			opacity: 0
+			top: 0
+			transform: rotate(180deg)
+			background: #fff
+
+		//@include breakpoint(medium)
+		//	.sandwich
+		//		transform: scale(2)
+
+.grid
+	width: 100%
+	margin-left: 0
+	position: relative
+	transition: all .3s ease
+
+.aside-list
+	width: 100%
+	position: fixed
+	background: #fff
+	display: flex
+	flex-direction: column
+	justify-content: center
+	top: 0
+	left: 0
+	box-shadow: 0
+	transition: all .3s ease
+	z-index: 1
+
+	.year-list
+
+		position: relative
+		//transform: translateX(-20px)
+		transition: all .3s ease
+
+		span
+			opacity: .5
+
+			&:hover
+				transform: scale(1.1, 1.1)
+				opacity: 1
+
+@keyframes fadeInUp
+	0%
+		opacity: 0
+		transform: translateY(20px)
+
+	100%
+		opacity: 1
+		transform: translateY(0)
+
+@keyframes fadeOutDown
+	0%
+		opacity: 1
+		transform: translateY(0)
+
+	100%
+		opacity: 0
+		transform: translateY(20px)

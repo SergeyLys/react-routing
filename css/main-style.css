@@ -1,0 +1,29 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style-type: none;
+  padding: 0; }
+  *:focus {
+    outline: none; }
+
+body {
+  min-width: 320px;
+  overflow-x: hidden; }
+
+h1 {
+  font-size: 120px;
+  letter-spacing: 4px;
+  font-family: "roverd_proregular", sans-serif;
+  font-weight: 100;
+  margin: 45px; }
+
+small {
+  font-size: 60px;
+  letter-spacing: 1px;
+  font-family: "roverd_proregular", sans-serif;
+  font-weight: 100; }
+
+a {
+  color: #1E9AC3; }
+
+/*# sourceMappingURL=main-style.css.map */

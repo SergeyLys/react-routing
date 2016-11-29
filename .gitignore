@@ -1,0 +1,7 @@
+.log
+.idea
+.directory
+.DS_Store
+.htaccess
+node_modules
+bower_components
